@@ -278,7 +278,7 @@
 			      </section>
 
 			      <section>
-				<h1>Representando el conocimiento</h1>
+				<h1>El conocimiento en red</h1>
 				<p><a href="https://commons.wikimedia.org/wiki/File:Semantic_Net.svg#/media/File:Semantic_Net.svg"><img alt="Semantic Net.svg" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Semantic_Net.svg" height="190" width="305"></a><br>Public Domain, https://commons.wikimedia.org/w/index.php?curid=1353062</p>
 			      </section>
 
@@ -350,7 +350,17 @@ puts prefijadores['super'].call( 'chanchi' )</code></pre>
 			      data-background='http://i.imgur.com/DC2OlIm.jpg'
 			      alt='comparaciones'>
 			      </section>
-			      
+
+			      <section>
+				<pre><code>mlp = nn.Sequential()
+mlp:add( nn.Linear(10, 25) ) -- 10 input, 25 hidden units
+mlp:add( nn.Tanh() ) -- función de transferencia hiperbólica
+mlp:add( nn.Linear(25, 1) ) -- 1 salida</code></pre>
+				
+				<pre class='fragment'><code>criterion = nn.MSECriterion() -- Criterio error cuadrático medio
+ trainer = nn.StochasticGradient(mlp, criterion)
+ trainer:train(dataset) -- entrenar con algún ejemplo</code></pre>
+			      </section>
 			      
 			    </section>
 
