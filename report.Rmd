@@ -1,0 +1,23 @@
+---
+title: "Inteligencia computacional"
+author: "JJ Merelo"
+date: "16/06/2016"
+output: html_document
+bibliography: ci.bib
+---
+
+#Una breve revisión de la historia de la Inteligencia Computacional
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(ggthemes)
+trends.apocalypse <- read.csv('report.csv')
+trends.apocalypse$robot.uprising <- as.numeric(trends.apocalypse$robot.uprising )
+trends.apocalypse$ai.takeover <- as.numeric(trends.apocalypse$ai.takeover )
+trends.apocalypse$artificial.general.intelligence <- as.numeric(trends.apocalypse$artificial.general.intelligence )
+```
+
+
+```{r, echo=FALSE}
+ggplot()+geom_line(data=trends.apocalypse,aes(x=Week,y=robot.uprising,color='Robot Uprising',group='name'))+geom_line(data=trends.apocalypse,aes(x=Week,y=ai.takeover,color='AI Takeover',group='name'))+geom_line(data=trends.apocalypse,aes(x=Week,y=artificial.general.intelligence,color='Artificial General Intelligence',group='name'))
+```
